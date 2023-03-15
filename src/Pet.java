@@ -1,4 +1,4 @@
-public class pet {
+public class Pet {
 
     enum Kind {
         DOG,
@@ -11,7 +11,7 @@ public class pet {
     private String birth;
     private double weight;
 
-    public pet(Kind kind, String name, String birth, double weight) {
+    public Pet(Kind kind, String name, String birth, double weight) {
         this.kind = kind;
         this.name = name;
         this.birth = birth;
@@ -46,18 +46,18 @@ public class pet {
         return weight;
     }
 
-    public static pet parsePet(String line) {
+    public static Pet parsePet(String line) {
         String[] parts = line.split(",");
         Kind kind = parseKind(parts[0]);
         String name = parts[1];
         double weight = parts.length > 2 ? Double.parseDouble(parts[2]) : 0.0;
         String birth = parts.length > 3 ? parts[3] : null;
-        return new pet(kind, name, birth, weight);
+        return new Pet(kind, name, birth, weight);
     }
 
     private static Kind parseKind(String line) {
         try {
-            return Kind.valueOf(line.toUpperCase())
+            return Kind.valueOf(line.toUpperCase());
         } catch (IllegalArgumentException e) {
             return Kind.OTHER;
         }
