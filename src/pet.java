@@ -45,4 +45,21 @@ public class pet {
     public double getWeight() {
         return weight;
     }
+
+    public static pet parsePet(String line) {
+        String[] parts = line.split(",");
+        String kind = parts[0];
+        String name = parts[1];
+        double weight = parts.length > 2 ? Double.parseDouble(parts[2]) : 0.0;
+        String birth = parts.length > 3 ? parts[3] : null;
+        return new pet(kind, name, birth, weight);
+    }
+
+    public static Kind parseKind(String line) {
+        try {
+            return Kind.valueOf(line.toUpperCase())
+        } catch (IllegalArgumentException e) {
+            return Kind.OTHER;
+        }
+    }
 }
