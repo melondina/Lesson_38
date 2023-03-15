@@ -1,3 +1,5 @@
+package homework_38;
+
 public class Pet {
 
     enum Kind {
