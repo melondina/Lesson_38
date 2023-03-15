@@ -4,6 +4,12 @@ public class pet {
         DOG,
         CAT,
         OTHER,
-
     }
+
+    Kind kind;
+    String name;
+    String birth;
+    double weight;
+
+
 }
