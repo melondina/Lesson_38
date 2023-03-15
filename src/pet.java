@@ -6,10 +6,10 @@ public class pet {
         OTHER,
     }
 
-    Kind kind;
-    String name;
-    String birth;
-    double weight;
+    final private Kind kind;
+    private String name;
+    private String birth;
+    private double weight;
 
     public pet(Kind kind, String name, String birth, double weight) {
         this.kind = kind;
